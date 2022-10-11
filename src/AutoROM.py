@@ -282,6 +282,7 @@ def main(accept_license, install_dir, quiet):
     # Create copy of checksum map which will be mutated
     checksum_map = dict(CHECKSUM_MAP)
     try:
+        print("Downloading ROMs via torrent")
         buffer = torrent_tar_to_buffer()
         extract_roms_from_tar(buffer, packages, checksum_map, quiet)
     except tarfile.ReadError:
